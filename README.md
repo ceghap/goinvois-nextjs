@@ -1,3 +1,7 @@
 # goinvois-nextjs
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nextjs-esgdr9)
+Invoice generator on the go.
+
+- Build on nextjs (typescript).
+- Fullstack.
+- With prisma
