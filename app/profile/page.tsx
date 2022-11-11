@@ -9,6 +9,7 @@ export default async function Profile() {
 
       <main>
         <h1 className="font-semibold text-2xl">Profile</h1>
+        {/* purposely made an error to test error boundary */}
       </main>
     </div>
   );

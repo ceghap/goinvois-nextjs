@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export default async function Profile() {
+export default async function Invoices() {
   return (
     <div>
       <Head>
