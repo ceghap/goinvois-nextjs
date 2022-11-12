@@ -8,7 +8,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/implementors/features.
 	// "features": {},
 
-	"extensions": ["dbaeumer.vscode-eslint"],
+	"extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
