@@ -3,16 +3,18 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/implementors/features.
 	// "features": {},
 
+	"extensions": ["dbaeumer.vscode-eslint"],
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm i"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
