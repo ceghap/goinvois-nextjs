@@ -18,7 +18,7 @@ export const SidebarMenu = () => {
       <li>
         <Link
           rel="noopener noreferrer"
-          href="/invoices"
+          href="/dashboard/invoices"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbFileInvoice className="text-lg" />

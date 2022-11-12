@@ -1,5 +1,5 @@
-import { ContentArea } from '@components/common/ContentArea';
-import { Sidebar } from '@components/common/Sidebar';
+import { ContentArea } from '@components/ContentArea';
+import { Sidebar } from '@components/Sidebar';
 import '@styles/globals.css';
 
 export default function RootLayout({
