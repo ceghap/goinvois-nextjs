@@ -11,7 +11,7 @@ export default function RootLayout({
     <html>
       <head />
       <body>
-        <div className="flex">
+        <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
           <Sidebar />
           <ContentArea>{children}</ContentArea>
         </div>
