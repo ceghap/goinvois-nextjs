@@ -1,11 +1,10 @@
-import Head from 'next/head';
+import { SectionHeader } from '@components/SectionHeader';
 
 export default async function Profile() {
   return (
     <div>
       <main>
-        <h1 className="font-semibold text-2xl">Profile</h1>
-        {/* purposely made an error to test error boundary */}
+        <SectionHeader title="Profile" />
       </main>
     </div>
   );

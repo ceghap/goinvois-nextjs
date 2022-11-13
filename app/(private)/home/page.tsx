@@ -1,8 +1,10 @@
+import { SectionHeader } from '@components/SectionHeader';
+
 export default function Dashboard() {
   return (
     <div>
       <main>
-        <h1 className="font-semibold text-2xl">Home</h1>
+        <SectionHeader title="Home" />
       </main>
     </div>
   );

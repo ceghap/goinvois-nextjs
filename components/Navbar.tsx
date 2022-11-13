@@ -26,7 +26,7 @@ export const Navbar = () => {
           <li className="flex">
             <Link
               rel="noopener noreferrer"
-              href="/dashboard"
+              href="/home"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
             >
               Dashboard

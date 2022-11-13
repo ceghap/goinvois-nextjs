@@ -1,14 +1,10 @@
-import Head from 'next/head';
+import { SectionHeader } from '@components/SectionHeader';
 
 export default async function Invoices() {
   return (
     <div>
-      <Head>
-        <title>Invoices</title>
-      </Head>
-
       <main>
-        <h1 className="font-semibold text-2xl">Invoices</h1>
+        <SectionHeader title="Invoices" />
       </main>
     </div>
   );
