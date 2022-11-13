@@ -6,20 +6,19 @@ interface Props {
   body: React.ReactNode;
   footer: React.ReactNode;
   isOpen: boolean;
+  setIsOpen: (val: boolean) => void;
 }
 
 import { Dialog, Transition } from '@headlessui/react';
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 
-export const Modal = ({ header, body, footer, isOpen }: Props) => {
-  let [ModalIsOpen, setModalIsOpen] = useState(isOpen);
-
+export const Modal = ({ header, body, footer, isOpen, setIsOpen }: Props) => {
   function closeModal() {
-    setModalIsOpen(false);
+    setIsOpen(false);
   }
 
   return (
-    <Transition appear show={ModalIsOpen} as={Fragment}>
+    <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10 " onClose={closeModal}>
         <Transition.Child
           as={Fragment}

@@ -1,5 +1,6 @@
 import create from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
 
 interface Companies {
   isModalOpen: boolean;
@@ -8,7 +9,7 @@ interface Companies {
 
 export const useCompaniesStore = create<Companies>()(
   devtools(
-    persist((set) => ({
+    immer((set) => ({
       isModalOpen: false,
       toggle: () => set((state) => ({ isModalOpen: !state.isModalOpen })),
     }))
