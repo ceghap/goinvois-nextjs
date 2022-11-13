@@ -13,6 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@tanstack/react-table": "^8.5.24",
+    "immer": "^9.0.16",
     "next": "^13.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
