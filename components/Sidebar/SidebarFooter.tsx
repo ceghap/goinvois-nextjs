@@ -7,7 +7,7 @@ export const SidebarFooter = () => {
       <li>
         <Link
           rel="noopener noreferrer"
-          href="/dashboard/profile"
+          href="/home/profile"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbSettings className="text-lg" />

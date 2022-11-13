@@ -12,17 +12,17 @@ export const SidebarMenu = () => {
       <li className="dark:bg-gray-800 dark:text-gray-50 rounded-full">
         <Link
           rel="noopener noreferrer"
-          href="/dashboard"
+          href="/home"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbHome className="text-lg" />
-          <span>Dashboard</span>
+          <span>home</span>
         </Link>
       </li>
       <li>
         <Link
           rel="noopener noreferrer"
-          href="/dashboard/invoices"
+          href="/home/invoices"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbFileInvoice className="text-lg" />
@@ -32,7 +32,7 @@ export const SidebarMenu = () => {
       <li>
         <Link
           rel="noopener noreferrer"
-          href="/dashboard/companies"
+          href="/home/companies"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbBuildingCommunity className="text-lg" />
@@ -42,7 +42,7 @@ export const SidebarMenu = () => {
       <li>
         <Link
           rel="noopener noreferrer"
-          href="/dashboard/customers"
+          href="/home/customers"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
           <TbUsers className="text-lg" />
