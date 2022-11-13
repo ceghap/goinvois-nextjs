@@ -1,6 +1,10 @@
 import { Breadcrumb } from './Breadcrumb';
 
-export const ContentArea = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const ContentArea = ({ children }: Props) => {
   return (
     <div className="h-screen w-full">
       <Breadcrumb />
