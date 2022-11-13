@@ -6,7 +6,7 @@ interface Props {
 
 export const ContentArea = ({ children }: Props) => {
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen w-full dark:bg-gray-700">
       <Breadcrumb />
       <div className="p-4 h-full">{children}</div>
     </div>
