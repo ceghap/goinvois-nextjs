@@ -6,7 +6,7 @@
 const nextConfig = {
   /* config options here */
   experimental: {
-    appDir: true,
+    // appDir: true,
   },
 };
 
