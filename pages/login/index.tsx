@@ -1,7 +1,7 @@
 import { PublicLayout } from '@components/layouts/PublicLayout';
 import React from 'react';
 
-export const Login = () => {
+const Login = () => {
   return (
     <div>
       <main className="flex justify-center items-center h-screen w-screen bg-gray-800">
@@ -96,6 +96,8 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;
 
 Login.getLayout = function getLayout(page: React.ReactElement) {
   return <PublicLayout>{page}</PublicLayout>;
