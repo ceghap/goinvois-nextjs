@@ -1,5 +1,5 @@
-import { CompaniesSectionHeader } from './CompaniesSectionHeader';
-import { CompaniesTable } from './CompaniesTable';
+import { CompaniesSectionHeader } from '@components/companies/CompaniesSectionHeader';
+import { CompaniesTable } from '@components/companies/CompaniesTable';
 import React from 'react';
 import { PrivateLayout } from '@components/layouts/PrivateLayout';
 
