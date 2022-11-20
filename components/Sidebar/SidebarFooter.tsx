@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useSidebarStore } from './SidebarStore';
 
 export const SidebarFooter = () => {
-  const { page, setPage } = useSidebarStore((state) => state);
+  const { page } = useSidebarStore((state) => state);
 
   return (
     <ul className="pt-4 pb-2 space-y-1 text-sm">
@@ -17,9 +17,8 @@ export const SidebarFooter = () => {
       >
         <Link
           rel="noopener noreferrer"
-          href="/home/profile"
+          href="/profile"
           className="flex items-center p-4 space-x-3 rounded-md"
-          onClick={() => setPage('profile', 'Profile')}
         >
           <TbSettings className="text-lg" />
           <span>Profile</span>

@@ -2,9 +2,25 @@ import { PrivateLayout } from '@components/layouts/PrivateLayout';
 import { SectionHeader } from '@components/SectionHeader';
 import React from 'react';
 
-const Invoices = () => {
-  return <SectionHeader title="Invoices" />;
+interface Props {
+  title: string;
+}
+
+const Invoices = ({ title }: Props) => {
+  return (
+    <>
+      <SectionHeader title={title} />
+    </>
+  );
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      title: 'Invoices',
+    },
+  };
+}
 
 export default Invoices;
 
