@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export const Navbar = () => {
+  const { data: session } = useSession();
   return (
     <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto">
@@ -14,15 +16,25 @@ export const Navbar = () => {
           <img src="/logo.png" className="w-36" alt="" />
         </Link>
         <ul className="items-stretch hidden space-x-3 md:flex">
-          <li className="flex">
-            <Link
-              rel="noopener noreferrer"
-              href="/login"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-            >
-              Login
-            </Link>
-          </li>
+          {session ? (
+            <li className="flex">
+              <button
+                onClick={() => signOut()}
+                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+              >
+                Logout
+              </button>
+            </li>
+          ) : (
+            <li className="flex">
+              <button
+                onClick={() => signIn()}
+                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+              >
+                Login
+              </button>
+            </li>
+          )}
           <li className="flex">
             <Link
               rel="noopener noreferrer"

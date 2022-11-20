@@ -6,6 +6,7 @@ Invoice generator on the go.
 - Fullstack.
 - With tailwindcss
 - With prisma
+- With Auth0
 
 ## Gettting staarted (stable nextjs way)
 
@@ -18,3 +19,18 @@ Invoice generator on the go.
 
 this implementation was moved to a different branch of this repository `with-server-component`.  
 to check out the implementation please checkout to the branch `git checkout with-server-component`
+
+## NextAuth + Auth0
+
+- I choose NextAuth so that changing provider in the future will be easier(Avoid vendor locking).
+- I did choose Auth0 as it offer free plan with 7000 active user & I did not need to host it anywhere.
+
+Add this in .env.local to make Auth0 Work
+
+```
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+AUTH0_CLIENT_ID=
+AUTH0_CLIENT_SECRET=
+AUTH0_ISSUER=
+```
