@@ -11,3 +11,5 @@ export default Invoices;
 Invoices.getLayout = function getLayout(page: React.ReactElement) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
+
+Invoices.auth = true;

@@ -11,3 +11,5 @@ export default Customers;
 Customers.getLayout = function getLayout(page: React.ReactElement) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
+
+Customers.auth = true;

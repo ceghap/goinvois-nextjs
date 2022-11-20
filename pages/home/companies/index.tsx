@@ -17,3 +17,5 @@ export default Companies;
 Companies.getLayout = function getLayout(page: React.ReactElement) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
+
+Companies.auth = true;
