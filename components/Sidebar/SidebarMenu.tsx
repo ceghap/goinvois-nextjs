@@ -11,7 +11,7 @@ export const SidebarMenu = () => {
   const { page } = useSidebarStore((state) => state);
 
   return (
-    <ul className="pt-2 pb-4 space-y-1 text-sm">
+    <ul className="pt-2 pb-4 space-y-1 text-xs">
       <li
         className={
           page === 'home'
@@ -24,7 +24,7 @@ export const SidebarMenu = () => {
           href="/home"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
-          <TbHome className="text-lg" />
+          <TbHome className="text-sm" />
           <span>home</span>
         </Link>
       </li>
@@ -40,7 +40,7 @@ export const SidebarMenu = () => {
           href="/invoices"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
-          <TbFileInvoice className="text-lg" />
+          <TbFileInvoice className="text-sm" />
           <span>Invoices</span>
         </Link>
       </li>
@@ -56,7 +56,7 @@ export const SidebarMenu = () => {
           href="/companies"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
-          <TbBuildingCommunity className="text-lg" />
+          <TbBuildingCommunity className="text-sm" />
           <span>Companies</span>
         </Link>
       </li>
@@ -72,7 +72,7 @@ export const SidebarMenu = () => {
           href="/customers"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
-          <TbUsers className="text-lg" />
+          <TbUsers className="text-sm" />
           <span>Customers</span>
         </Link>
       </li>

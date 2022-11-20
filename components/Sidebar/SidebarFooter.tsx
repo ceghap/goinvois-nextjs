@@ -7,7 +7,7 @@ export const SidebarFooter = () => {
   const { page } = useSidebarStore((state) => state);
 
   return (
-    <ul className="pt-4 pb-2 space-y-1 text-sm">
+    <ul className="pt-4 pb-2 space-y-1 text-xs">
       <li
         className={
           page === 'profile'
@@ -20,7 +20,7 @@ export const SidebarFooter = () => {
           href="/profile"
           className="flex items-center p-4 space-x-3 rounded-md"
         >
-          <TbSettings className="text-lg" />
+          <TbSettings className="text-sm" />
           <span>Profile</span>
         </Link>
       </li>
@@ -31,7 +31,7 @@ export const SidebarFooter = () => {
           className="flex items-center p-4 space-x-3 rounded-md"
           onClick={() => signOut()}
         >
-          <TbLogout className="text-lg" />
+          <TbLogout className="text-sm" />
           <span>Logout</span>
         </a>
       </li>

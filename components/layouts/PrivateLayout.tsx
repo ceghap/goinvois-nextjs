@@ -30,7 +30,7 @@ export const PrivateLayout = ({ children }: Props) => {
     }
   }, [router.asPath]);
   return (
-    <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
+    <div className="grid grid-cols-6 bg-neutral-100 h-screen w-screen overflow-x-hidden">
       <Sidebar />
       <ContentArea>{children}</ContentArea>
     </div>

@@ -15,7 +15,7 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
         button={
           <button
             type="button"
-            className="px-6 py-2 font-semibold rounded-full dark:bg-violet-400 dark:text-gray-900"
+            className="px-6 py-2 font-semibold rounded-full dark:bg-violet-400 dark:text-gray-900 text-xs"
             onClick={() => setIsOpen(true)}
           >
             Add

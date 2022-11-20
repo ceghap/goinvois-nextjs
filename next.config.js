@@ -12,6 +12,14 @@ const nextConfig = {
     AUTH0_ISSUER: process.env.AUTH0_ISSUER || '',
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET || '',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's.gravatar.com',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
