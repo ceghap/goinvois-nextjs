@@ -4,6 +4,8 @@ import Auth0Provider from 'next-auth/providers/auth0';
 import EmailProvider from 'next-auth/providers/email';
 import prisma from '../../../lib/prismadb';
 
+const isConnString = true;
+
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   // Configure one or more authentication providers
@@ -14,7 +16,16 @@ export const authOptions = {
       issuer: process.env.AUTH0_ISSUER,
     }),
     EmailProvider({
-      server: process.env.EMAIL_SERVER,
+      server: isConnString
+        ? process.env.EMAIL_SERVER
+        : {
+            host: process.env.EMAIL_SERVER_HOST,
+            port: process.env.EMAIL_SERVER_PORT,
+            auth: {
+              user: process.env.EMAIL_SERVER_USER,
+              pass: process.env.EMAIL_SERVER_PASSWORD,
+            },
+          },
       from: process.env.EMAIL_FROM,
     }),
   ],

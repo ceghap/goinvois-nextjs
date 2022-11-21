@@ -1,5 +1,4 @@
 // @ts-check
-
 /**
  * @type {import('next').NextConfig}
  **/
@@ -13,6 +12,10 @@ const nextConfig = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET || '',
     EMAIL_SERVER: process.env.EMAIL_SERVER || '',
     EMAIL_FROM: process.env.EMAIL_FROM || '',
+    EMAIL_SERVER_USER: process.env.EMAIL_SERVER_USER || '',
+    EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD || '',
+    EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST || '',
+    EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT || '',
   },
   images: {
     remotePatterns: [
