@@ -27,23 +27,11 @@ export const Navbar = () => {
             </li>
           ) : (
             <li className="flex">
-              <button
-                onClick={() => signIn()}
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                Login
+              <button className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">
+                <Link href="/login">Login</Link>
               </button>
             </li>
           )}
-          <li className="flex">
-            <Link
-              rel="noopener noreferrer"
-              href="/home"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-            >
-              Dashboard
-            </Link>
-          </li>
         </ul>
         <button className="flex justify-end p-4 md:hidden">
           <svg

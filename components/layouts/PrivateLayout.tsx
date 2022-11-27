@@ -30,7 +30,7 @@ export const PrivateLayout = ({ children }: Props) => {
     }
   }, [router.asPath]);
   return (
-    <div className="grid grid-cols-6 bg-neutral-100 h-screen w-screen overflow-x-hidden">
+    <div className="grid grid-cols-6 bg-gray-900 h-screen w-screen overflow-x-hidden">
       <Sidebar />
       <ContentArea>{children}</ContentArea>
     </div>

@@ -1,5 +1,6 @@
 import { PublicLayout } from '@components/layouts/PublicLayout';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Index() {
   return (
@@ -19,9 +20,12 @@ export default function Index() {
             simpanan anda.
           </p>
           <div className="flex flex-wrap justify-center">
-            <button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
-              Daftar
-            </button>
+            <Link href="/register">
+              <button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
+                Daftar
+              </button>
+            </Link>
+
             <button className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">
               ketahui lebih lanjut
             </button>

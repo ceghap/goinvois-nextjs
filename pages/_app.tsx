@@ -20,25 +20,7 @@ export default function MyApp({
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  const layout = getLayout(
-    Component.auth ? (
-      <Auth>
-        <Component {...pageProps} />
-      </Auth>
-    ) : (
-      <Component {...pageProps} />
-    )
-  );
+  const layout = getLayout(<Component {...pageProps} />);
+
   return <SessionProvider session={session}>{layout}</SessionProvider>;
-}
-
-function Auth({ children }: { children: ReactElement }) {
-  // if `{ required: true }` is supplied, `status` can only be "loading" or "authenticated"
-  const { status } = useSession({ required: true });
-
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
-
-  return children;
 }
