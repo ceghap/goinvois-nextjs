@@ -2,8 +2,6 @@ import { CompaniesSectionHeader } from '@components/companies/CompaniesSectionHe
 import { CompaniesTable } from '@components/companies/CompaniesTable';
 import React from 'react';
 import { PrivateLayout } from '@components/layouts/PrivateLayout';
-import { getSession } from 'next-auth/react';
-import { GetServerSideProps } from 'next';
 
 const Companies = () => {
   return (
