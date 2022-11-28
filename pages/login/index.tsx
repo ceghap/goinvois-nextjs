@@ -1,9 +1,7 @@
-import { DefaultLogin } from '@components/auth/DefaultLogin';
 import { OauthOnly } from '@components/auth/OauthOnly';
 import { PublicLayout } from '@components/layouts/PublicLayout';
 import { GetServerSideProps } from 'next';
-import { getSession, signIn } from 'next-auth/react';
-import Link from 'next/link';
+import { getSession } from 'next-auth/react';
 import React from 'react';
 
 const Login = () => {

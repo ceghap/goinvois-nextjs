@@ -1,8 +1,15 @@
-import Link from 'next/link';
 import React from 'react';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 export const OauthOnly = () => {
+  const router = useRouter();
+
+  const callbackUrl: string =
+    typeof router.query.callbackUrl === 'string'
+      ? typeof router.query.callbackUrl
+      : 'http://localhost:3000/home';
+
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100">
       <h1 className="text-2xl font-bold text-center">Login</h1>
@@ -19,7 +26,9 @@ export const OauthOnly = () => {
           aria-label="Log in with Google"
           className="p-3 rounded-sm"
           onClick={() =>
-            signIn('google', { callbackUrl: 'http://localhost:3000/home' })
+            signIn('google', {
+              callbackUrl,
+            })
           }
         >
           <svg
@@ -34,7 +43,9 @@ export const OauthOnly = () => {
           aria-label="Log in with GitHub"
           className="p-3 rounded-sm"
           onClick={() =>
-            signIn('github', { callbackUrl: 'http://localhost:3000/home' })
+            signIn('github', {
+              callbackUrl,
+            })
           }
         >
           <svg
