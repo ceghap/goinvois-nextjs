@@ -17,19 +17,8 @@ export default function Home() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const session = await getSession({ req });
-
-  if (!session)
-    return { redirect: { destination: '/login', permanent: false } };
-
-  return {
-    props: {
-      session,
-    },
-  };
-};
-
 Home.getLayout = function getLayout(page: React.ReactElement) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
+
+Home.auth = true;

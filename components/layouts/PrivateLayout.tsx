@@ -22,7 +22,6 @@ export const PrivateLayout = ({ children }: Props) => {
 
   useEffect(() => {
     const path = router.pathname.replace(/^\/|\/$/g, '');
-    console.log(path);
     const page = pages.find((page) => page.path === path);
 
     if (page) {

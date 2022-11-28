@@ -2,6 +2,7 @@ import { PrivateLayout } from '@components/layouts/PrivateLayout';
 import { SectionHeader } from '@components/SectionHeader';
 import { GetServerSideProps } from 'next';
 import { getSession, useSession } from 'next-auth/react';
+import type { NextRequest } from 'next/server';
 import Image from 'next/image';
 
 import React from 'react';
@@ -67,19 +68,6 @@ const Profile = () => {
       </div>
     </>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const session = await getSession({ req });
-
-  if (!session)
-    return { redirect: { destination: '/login', permanent: false } };
-
-  return {
-    props: {
-      session,
-    },
-  };
 };
 
 export default Profile;

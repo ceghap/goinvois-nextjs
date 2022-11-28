@@ -14,15 +14,4 @@ Customers.getLayout = function getLayout(page: React.ReactElement) {
   return <PrivateLayout>{page}</PrivateLayout>;
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const session = await getSession({ req });
-
-  if (!session)
-    return { redirect: { destination: '/login', permanent: false } };
-
-  return {
-    props: {
-      session,
-    },
-  };
-};
+Customers.auth = true;
