@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
-import { SectionHeader } from '@components/SectionHeader';
 import { Modal } from '@components/Modal';
+import { SectionHeader } from '@components/SectionHeader';
+import { useState } from 'react';
 interface Props {
   title: string;
 }

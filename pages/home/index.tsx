@@ -1,9 +1,7 @@
-import Head from 'next/head';
 import { PrivateLayout } from '@components/layouts/PrivateLayout';
-import React from 'react';
 import { SectionHeader } from '@components/SectionHeader';
-import { getSession } from 'next-auth/react';
-import { GetServerSideProps } from 'next';
+import Head from 'next/head';
+import React from 'react';
 
 export default function Home() {
   return (

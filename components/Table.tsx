@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
 import {
   createColumnHelper,
   RowModel,
   Table,
   useReactTable,
 } from '@tanstack/react-table';
+import { useMemo } from 'react';
 
 interface Props {
   columns: [];

@@ -1,5 +1,5 @@
-import { SidebarHeader } from './SidebarHeader';
 import { SidebarFooter } from './SidebarFooter';
+import { SidebarHeader } from './SidebarHeader';
 import { SidebarMenu } from './SidebarMenu';
 
 export const Sidebar = () => {

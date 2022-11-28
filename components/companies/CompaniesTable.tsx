@@ -1,11 +1,10 @@
 'use client';
 import {
-  flexRender,
   createColumnHelper,
+  flexRender,
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import React from 'react';
 
 interface Company {
   id: string;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TbHome, TbChevronsRight } from 'react-icons/tb';
+import { TbChevronsRight, TbHome } from 'react-icons/tb';
 import { useSidebarStore } from './Sidebar/SidebarStore';
 
 export const Breadcrumb = () => {

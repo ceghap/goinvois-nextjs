@@ -1,6 +1,5 @@
 import { PublicLayout } from '@components/layouts/PublicLayout';
 import { GetServerSideProps } from 'next';
-import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 

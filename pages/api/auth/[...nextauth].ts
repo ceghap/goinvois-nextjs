@@ -1,9 +1,9 @@
-import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import GoogleProvider from 'next-auth/providers/google';
-import GitHubProvider from 'next-auth/providers/github';
-import prisma from '../../../lib/prismadb';
 import type { NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth';
+import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
+import prisma from '../../../lib/prismadb';
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options

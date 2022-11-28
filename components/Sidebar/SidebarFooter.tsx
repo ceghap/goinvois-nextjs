@@ -1,6 +1,6 @@
-import { TbLogout, TbSettings } from 'react-icons/tb';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
+import { TbLogout, TbSettings } from 'react-icons/tb';
 import { useSidebarStore } from './SidebarStore';
 
 export const SidebarFooter = () => {
