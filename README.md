@@ -34,6 +34,8 @@ I also set prisma with supabase as it is a postgreSQL & it is **FREE!** :joi:
 
 Add this in `.env` to make Auth0 Work
 
+generate SECRET using this cmd `openssl rand -base64 32`
+
 ```
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=

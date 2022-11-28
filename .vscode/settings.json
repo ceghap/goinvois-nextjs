@@ -11,5 +11,8 @@
   },
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }
