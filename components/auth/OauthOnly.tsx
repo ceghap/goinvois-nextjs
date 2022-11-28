@@ -7,7 +7,7 @@ export const OauthOnly = () => {
 
   const callbackUrl: string =
     typeof router.query.callbackUrl === 'string'
-      ? typeof router.query.callbackUrl
+      ? router.query.callbackUrl
       : 'http://localhost:3000/home';
 
   return (
