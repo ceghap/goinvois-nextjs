@@ -1,4 +1,6 @@
 import { PublicLayout } from '@components/layouts/PublicLayout';
+import { GetServerSideProps } from 'next';
+import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -124,6 +126,17 @@ export default function Index() {
   );
 }
 
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const session = await getSession({ req });
+
+  if (session) return { redirect: { destination: '/home', permanent: false } };
+
+  return {
+    props: {
+      session,
+    },
+  };
+};
 Index.getLayout = function getLayout(page: React.ReactElement) {
   return <PublicLayout>{page}</PublicLayout>;
 };
