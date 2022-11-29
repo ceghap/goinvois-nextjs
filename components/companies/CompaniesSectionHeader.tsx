@@ -1,13 +1,51 @@
 'use client';
 import { Modal } from '@components/Modal';
 import { SectionHeader } from '@components/SectionHeader';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import * as z from 'zod';
 interface Props {
   title: string;
 }
 
+const FormSchema = z.object({
+  name: z.string().min(4),
+  email: z.string().email().min(2),
+  address: z.string().min(6),
+  phone: z.string().min(6),
+});
+
+type SchemaType = z.infer<typeof FormSchema>;
+
 export const CompaniesSectionHeader = ({ title }: Props) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm<SchemaType>({
+    resolver: zodResolver(FormSchema),
+  });
   const [isOpen, setIsOpen] = useState(false);
+
+  const onSubmit: SubmitHandler<SchemaType> = async (data) => {
+    const company = await fetch('/api/companies', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+
+    console.log(company);
+    setIsOpen(false);
+    reset();
+  };
+
+  console.log(watch('name'));
+  console.log(watch('address'));
+  console.log(watch('email'));
+  console.log(watch('phone'));
+
   return (
     <>
       <SectionHeader
@@ -25,57 +63,77 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
       <Modal
         header="Add company"
         body={
-          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-            <div className="col-span-full sm:col-span-3 text-sm ">
-              <label htmlFor="firstname" className="dark:text-gray-400">
-                First name
-              </label>
-              <input
-                id="firstname"
-                type="text"
-                placeholder="First name"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-              />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+              <div className="col-span-full text-sm ">
+                <label htmlFor="companyName" className="dark:text-gray-400">
+                  Company name
+                </label>
+                <input
+                  id="companyName"
+                  type="text"
+                  placeholder="Company name"
+                  {...register('name')}
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                />
+                {errors.name?.message && (
+                  <p className="text-red-600">{errors.name?.message}</p>
+                )}
+              </div>
+
+              <div className="col-span-full text-sm">
+                <label htmlFor="companyAddress" className="dark:text-gray-400">
+                  Address
+                </label>
+                <input
+                  id="companyAddress"
+                  type="text"
+                  placeholder="Address"
+                  {...register('address')}
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                />
+                {errors.address?.message && (
+                  <p className="text-red-600">{errors.address?.message}</p>
+                )}
+              </div>
+              <div className="col-span-full sm:col-span-3 text-sm">
+                <label htmlFor="email" className="dark:text-gray-400">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  {...register('email')}
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                />
+                {errors.email?.message && (
+                  <p className="text-red-600">{errors.email?.message}</p>
+                )}
+              </div>
+              <div className="col-span-full sm:col-span-3 text-sm">
+                <label htmlFor="companyPhone" className="dark:text-gray-400">
+                  Phone
+                </label>
+                <input
+                  id="companyPhone"
+                  type="text"
+                  placeholder="Phone"
+                  {...register('phone')}
+                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                />
+                {errors.phone?.message && (
+                  <p className="text-red-600">{errors.phone?.message}</p>
+                )}
+              </div>
             </div>
-            <div className="col-span-full sm:col-span-3 text-sm">
-              <label htmlFor="lastname" className="dark:text-gray-400">
-                Last name
-              </label>
-              <input
-                id="lastname"
-                type="text"
-                placeholder="Last name"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-              />
-            </div>
-            <div className="col-span-full text-sm">
-              <label htmlFor="email" className="dark:text-gray-400">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Email"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-              />
-            </div>
-            <div className="col-span-full text-sm">
-              <label htmlFor="address" className="dark:text-gray-400">
-                Address
-              </label>
-              <input
-                id="address"
-                type="text"
-                placeholder=""
-                className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
-              />
-            </div>
-          </div>
+          </form>
         }
         footer={
           <>
             <button
               type="button"
+              onClick={handleSubmit(onSubmit)}
               className="mr-4 inline-flex justify-center rounded-full border border-transparent dark:bg-violet-400 px-4 py-2 text-sm font-medium dark:text-gray-900 hover:dark:bg-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               Submit

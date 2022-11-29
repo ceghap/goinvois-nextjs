@@ -4,6 +4,14 @@ import { unstable_getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 const prisma = new PrismaClient();
 
+interface Company {
+  name: string;
+  email: string;
+  address: string;
+  phone: string;
+  userId?: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -17,10 +25,9 @@ export default async function handler(
   }
 
   if (req.method === 'POST') {
-    console.log(session);
     try {
-      const { name, email, address, phone } = req.body;
-      const company = await prisma.company.create({
+      const { name, email, address, phone }: Company = req.body;
+      const company: Company = await prisma.company.create({
         data: { name, email, address, phone, userId: session?.user.id },
       });
 
