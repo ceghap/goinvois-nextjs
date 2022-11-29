@@ -3,6 +3,7 @@ import { Sidebar } from '@components/Sidebar';
 import { useSidebarStore } from '@components/Sidebar/SidebarStore';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 interface Props {
   children: React.ReactNode;
@@ -29,7 +30,8 @@ export const PrivateLayout = ({ children }: Props) => {
     }
   }, [router.asPath]);
   return (
-    <div className="grid grid-cols-6 bg-gray-900 h-screen w-screen overflow-x-hidden">
+    <div className="grid grid-cols-6 dark:bg-gray-900 h-screen w-screen overflow-x-hidden">
+      <Toaster />
       <Sidebar />
       <ContentArea>{children}</ContentArea>
     </div>

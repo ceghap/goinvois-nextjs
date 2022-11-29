@@ -4,6 +4,7 @@ import { SectionHeader } from '@components/SectionHeader';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import * as z from 'zod';
 interface Props {
   title: string;
@@ -31,20 +32,24 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onSubmit: SubmitHandler<SchemaType> = async (data) => {
-    const company = await fetch('/api/companies', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    try {
+      const company = await fetch('/api/companies', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
 
-    console.log(company);
+      console.log(company);
+      toast.success('added');
+    } catch (error) {
+      let message;
+      if (error instanceof Error) message = error.message;
+      else message = String(error);
+      toast.error(message);
+    }
+
     setIsOpen(false);
-    reset();
+    // reset();
   };
-
-  console.log(watch('name'));
-  console.log(watch('address'));
-  console.log(watch('email'));
-  console.log(watch('phone'));
 
   return (
     <>
@@ -53,7 +58,7 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
         button={
           <button
             type="button"
-            className="px-6 py-2 font-semibold rounded-full dark:bg-violet-400 dark:text-gray-900 text-xs"
+            className="px-6 py-2 font-semibold rounded-full bg-violet-400 dark:text-gray-900 text-xs"
             onClick={() => setIsOpen(true)}
           >
             Add
@@ -134,7 +139,7 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
             <button
               type="button"
               onClick={handleSubmit(onSubmit)}
-              className="mr-4 inline-flex justify-center rounded-full border border-transparent dark:bg-violet-400 px-4 py-2 text-sm font-medium dark:text-gray-900 hover:dark:bg-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="mr-4 inline-flex justify-center rounded-full border border-transparent bg-violet-400 px-4 py-2 text-sm font-medium dark:text-gray-900 hover:dark:bg-violet-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               Submit
             </button>
