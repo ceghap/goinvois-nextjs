@@ -1,9 +1,16 @@
 import { Spinner } from '@components/Spinner';
 import '@styles/globals.css';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import type { NextPage } from 'next';
 import { SessionProvider, useSession } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
+import React from 'react';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -19,14 +26,25 @@ export default function MyApp({
   pageProps: { session, ...pageProps },
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  const [queryClient] = React.useState(() => new QueryClient());
 
   const layout = getLayout(
     Component.auth ? (
       <Auth>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <Component {...pageProps} />
+          </Hydrate>
+          <ReactQueryDevtools />
+        </QueryClientProvider>
       </Auth>
     ) : (
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </Hydrate>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     )
   );
   return <SessionProvider session={session}>{layout}</SessionProvider>;
