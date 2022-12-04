@@ -56,22 +56,26 @@ model VerificationToken {
 }
 
 model Profile {
-  id     String  @id @default(cuid())
-  active Boolean @default(true)
-  owner  User    @relation(fields: [userId], references: [id])
-  userId String  @unique
+  id        String   @id @default(cuid())
+  active    Boolean  @default(true)
+  owner     User     @relation(fields: [userId], references: [id])
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Customer {
-  id        String  @id @default(cuid())
+  id        String   @id @default(cuid())
   name      String
   email     String
   address   String
   phone     String
-  owner     User    @relation(fields: [userId], references: [id])
+  owner     User     @relation(fields: [userId], references: [id])
   userId    String
-  Company   Company @relation(fields: [companyId], references: [id])
+  Company   Company  @relation(fields: [companyId], references: [id])
   companyId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Company {
@@ -83,4 +87,6 @@ model Company {
   owner     User       @relation(fields: [userId], references: [id])
   userId    String
   customers Customer[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
 }
