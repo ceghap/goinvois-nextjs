@@ -52,7 +52,7 @@ export const Modal = ({ header, body, footer, isOpen, setIsOpen }: Props) => {
                 </Dialog.Title>
                 <div className="mt-2">{body}</div>
 
-                <div className="mt-4">
+                <div className="mt-4 flex justify-end">
                   {footer}
                   <button
                     type="button"

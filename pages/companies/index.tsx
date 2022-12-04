@@ -30,7 +30,11 @@ const Companies = ({
   return (
     <>
       <CompaniesSectionHeader title="Companies" />
-      {companies ? <CompaniesTable companies={companies} /> : <p>No Data</p>}
+      {companies.length > 0 ? (
+        <CompaniesTable companies={companies} />
+      ) : (
+        <p className="dark:text-gray-100">No Data</p>
+      )}
     </>
   );
 };
