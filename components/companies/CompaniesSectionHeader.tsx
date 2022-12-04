@@ -6,6 +6,18 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import * as z from 'zod';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { Company } from '@prisma/client';
+
+const postCompany = (data: SchemaType): Promise<Company> => {
+  if (!data) return Promise.reject('data is not provided');
+
+  return fetch('http://localhost:3000/api/companies', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((response) => response.json());
+};
+
 interface Props {
   title: string;
 }
@@ -23,7 +35,6 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm<SchemaType>({
@@ -31,15 +42,20 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
   });
   const [isOpen, setIsOpen] = useState(false);
 
-  const onSubmit: SubmitHandler<SchemaType> = async (data) => {
-    try {
-      const company = await fetch('/api/companies', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      });
+  const queryClient = useQueryClient();
+  const addCompany = useMutation(postCompany, {
+    onSuccess: (data) => {
+      toast.success(`company ${data.name} added.`);
+      queryClient.invalidateQueries(['companies']);
+    },
+    onError: () => {
+      toast.error('Someting went wrong. Unable to add company.');
+    },
+  });
 
-      console.log(company);
-      toast.success('added');
+  const onSubmit: SubmitHandler<SchemaType> = async (data: SchemaType) => {
+    try {
+      addCompany.mutate(data);
     } catch (error) {
       let message;
       if (error instanceof Error) message = error.message;
@@ -48,7 +64,7 @@ export const CompaniesSectionHeader = ({ title }: Props) => {
     }
 
     setIsOpen(false);
-    // reset();
+    reset();
   };
 
   return (

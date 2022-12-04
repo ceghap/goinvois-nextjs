@@ -1,8 +1,8 @@
-import { Company, PrismaClient } from '@prisma/client';
+import { Company } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { unstable_getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
-const prisma = new PrismaClient();
+import prisma from '../../../lib/prismadb';
 
 export default async function handler(
   req: NextApiRequest,
@@ -33,6 +33,7 @@ export default async function handler(
 
       res.status(200).json(company);
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: 'Something went wrong' });
     }
   } else if (req.method === 'GET') {
