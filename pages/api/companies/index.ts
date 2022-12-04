@@ -9,7 +9,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = await unstable_getServerSession(req, res, authOptions);
-  console.log(session);
+
   if (!session) {
     res.send({
       error:

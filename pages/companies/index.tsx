@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     },
   });
   const companies = await res.json();
-  console.log(companies);
+
   return {
     props: {
       companies,
