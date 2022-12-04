@@ -1,8 +1,8 @@
 import { Company } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { unstable_getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]';
 import prisma from '../../../lib/prismadb';
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,

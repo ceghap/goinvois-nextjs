@@ -2,12 +2,12 @@
 import { Modal } from '@components/Modal';
 import { SectionHeader } from '@components/SectionHeader';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Company } from '@prisma/client';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import * as z from 'zod';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Company } from '@prisma/client';
 
 const postCompany = (data: SchemaType): Promise<Company> => {
   if (!data) return Promise.reject('data is not provided');
