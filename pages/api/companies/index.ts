@@ -1,22 +1,15 @@
-import { PrismaClient } from '@prisma/client';
+import { Company, PrismaClient } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { unstable_getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 const prisma = new PrismaClient();
-
-interface Company {
-  name: string;
-  email: string;
-  address: string;
-  phone: string;
-  userId?: string;
-}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const session = await unstable_getServerSession(req, res, authOptions);
+  console.log(session);
   if (!session) {
     res.send({
       error:
@@ -26,18 +19,33 @@ export default async function handler(
 
   if (req.method === 'POST') {
     try {
-      const { name, email, address, phone }: Company = req.body;
-      const company: Company = await prisma.company.create({
-        data: { name, email, address, phone, userId: session?.user.id },
+      const { name, email, address, phone } = JSON.parse(req.body);
+
+      const company = await prisma.company.create({
+        data: {
+          name: name,
+          email: email,
+          address: address,
+          phone: phone,
+          userId: session?.user.id!,
+        },
       });
 
       res.status(200).json(company);
     } catch (error) {
       res.status(500).json({ message: 'Something went wrong' });
     }
+  } else if (req.method === 'GET') {
+    try {
+      const companies: Company[] = await prisma.company.findMany();
+
+      res.status(200).json(companies);
+    } catch (error) {
+      res.status(500).json({ message: error });
+    }
   } else {
     // Handle any other HTTP method
-    res.setHeader('Allow', ['POST']);
+    res.setHeader('Allow', ['POST', 'GET']);
     res
       .status(405)
       .json({ message: `HTTP method ${req.method} is not supported.` });

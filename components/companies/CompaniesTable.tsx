@@ -5,22 +5,19 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-
 interface Company {
   id: string;
   name: string;
   email: string;
+  address: string;
   phone: string;
+  userId?: string;
 }
 
-export const CompaniesTable = () => {
+export const CompaniesTable = ({ companies }: { companies: Company[] }) => {
   const columnHelper = createColumnHelper<Company>();
 
   const columns = [
-    columnHelper.accessor('id', {
-      cell: (info) => info.getValue(),
-      footer: (info) => info.column.id,
-    }),
     columnHelper.accessor((row) => row.name, {
       id: 'name',
       cell: (info) => <span>{info.getValue()}</span>,
@@ -39,30 +36,9 @@ export const CompaniesTable = () => {
     }),
   ];
 
-  const data = [
-    {
-      id: '1',
-      name: 'Company A',
-      email: 'a@companya.com',
-      phone: '0165656101',
-    },
-    {
-      id: '2',
-      name: 'Company B',
-      email: 'b@companya.com',
-      phone: '0165656101',
-    },
-    {
-      id: '3',
-      name: 'Company C',
-      email: 'c@companya.com',
-      phone: '0165656101',
-    },
-  ];
-
   const table = useReactTable({
-    columns,
-    data,
+    columns: columns,
+    data: companies,
     getCoreRowModel: getCoreRowModel(),
   });
 
@@ -70,7 +46,7 @@ export const CompaniesTable = () => {
     <div className="my-4">
       <table className="min-w-full text-xs dark:text-gray-100">
         <thead className="dark:bg-gray-800">
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table?.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id} className="text-left">
               {headerGroup.headers.map((header) => (
                 <th key={header.id} className="p-3">
@@ -86,7 +62,7 @@ export const CompaniesTable = () => {
           ))}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
+          {table?.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
               className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900"
@@ -100,7 +76,7 @@ export const CompaniesTable = () => {
           ))}
         </tbody>
         <tfoot className="dark:bg-gray-800">
-          {table.getFooterGroups().map((footerGroup) => (
+          {table?.getFooterGroups().map((footerGroup) => (
             <tr key={footerGroup.id} className="text-left">
               {footerGroup.headers.map((header) => (
                 <th key={header.id} className="p-3">

@@ -77,27 +77,27 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     // async signIn({ user, account, profile, email, credentials }) { return true },
     // async redirect({ url, baseUrl }) { return baseUrl },
-    async session({ session, token, user }) {
+    async session({ session, user }) {
       session = {
         ...session,
         user: {
-          id: user.id,
           ...session.user,
+          id: user.id,
         },
       };
       return session;
     },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      user && (token.user = user);
-      return token;
-    },
+    // async jwt({ token, user, account, profile, isNewUser }) {
+    //   user && (token.user = user);
+    //   return token;
+    // },
   },
   // Events are useful for logging
   // https://next-auth.js.org/configuration/events
   // events: {},
 
   // Enable debug messages in the console if you are having problems
-  debug: true,
+  // debug: true,
 };
 
 export default NextAuth(authOptions);
