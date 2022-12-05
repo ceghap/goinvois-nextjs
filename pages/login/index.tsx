@@ -7,7 +7,7 @@ import React from 'react';
 const Login = () => {
   return (
     <div>
-      <main className="flex justify-center items-center overflow-hidden rak:bg-gray-800 pb-12 h-screen">
+      <main className="flex justify-center items-center overflow-hidden dark:bg-gray-900 pb-12 h-screen">
         <OauthOnly />
       </main>
     </div>

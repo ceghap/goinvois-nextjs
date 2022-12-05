@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
+    <header className="p-4 dark:bg-gray-900 dark:text-gray-100 fixed left-0 right-0">
       <div className="container flex justify-between h-16 mx-auto">
         <Link
           rel="noopener noreferrer"

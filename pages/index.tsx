@@ -11,7 +11,7 @@ export default function Index() {
         <title>goinvois</title>
       </Head>
 
-      <section className="dark:bg-gray-800 dark:text-gray-100">
+      <section className="dark:bg-gray-900 dark:text-gray-100">
         <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
           <h1 className="text-4xl font-bold leading-none sm:text-5xl">
             Penjana <span className="text-violet-400">Invois</span> Percuma
@@ -34,7 +34,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <footer className="dark:bg-gray-800 dark:text-gray-50">
+      <footer className="dark:bg-gray-900 dark:text-gray-50 fixed left-0 right-0 bottom-0">
         <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400 justify-between items-center">
           <div>
             <span className="dark:text-gray-400">
