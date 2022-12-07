@@ -12,7 +12,7 @@ export default function Index() {
       </Head>
 
       <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
-        <div className="p-4 flex items-center max-w-[50vw]">
+        <div className="p-10 flex items-center max-w-[50vw]">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold leading-none sm:text-5xl">
               Penjana <span className="text-red-500">Invois</span> Pilihan
@@ -42,8 +42,9 @@ export default function Index() {
       <section className="bg-gray-100  border-b-2 border-gray-900">
         <div className="flex flex-col items-center justify-center py-16 space-y-6 ">
           <h2 className="text-4xl font-bold leading-none sm:text-5xl max-w-lg text-center">
-            Software percuma dari <span className="text-red-500">peniaga</span>{' '}
-            kepada <span className="text-red-500">peniaga</span>
+            Perisian web percuma dari{' '}
+            <span className="text-red-500">peniaga</span> kepada{' '}
+            <span className="text-red-500">peniaga</span>
           </h2>
           <button className="px-8 py-3 text-lg border-2 border-gray-700 font-medium">
             <Link href="/register">ketahui lebih lanjut</Link>
@@ -51,7 +52,7 @@ export default function Index() {
         </div>
       </section>
       <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
-        <div className="p-4 flex items-center max-w-[50vw]">
+        <div className="p-10 flex items-center max-w-[50vw]">
           <div className="space-y-6">
             <h4 className="text-4xl font-bold leading-none sm:text-3xl">
               Pengkalan data di awan
@@ -64,7 +65,7 @@ export default function Index() {
         </div>
         <div className="bg-green-300 container flex justify-center items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
           <img
-            src="/images/invoice-page-example.svg"
+            src="/images/invoice-on-cloud.svg"
             alt="invoice page example"
             title="invoice page example"
             width="80%"
@@ -74,19 +75,19 @@ export default function Index() {
       <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
         <div className="bg-purple-500 flex justify-center items-center max-w-[50vw]">
           <img
-            src="/images/invoice-page-example.svg"
+            src="/images/send-through-email.svg"
             alt="invoice page example"
             title="invoice page example"
             width="80%"
           />
         </div>
         <div className="container flex items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
-          <div className="space-y-6 p-4 ">
+          <div className="space-y-6 p-10 ">
             <h4 className="text-4xl font-bold leading-none sm:text-3xl">
               Jana invois dan kongsi
             </h4>
             <p className="text-lg">
-              Perlu hantar invois secara maya? Jangan bimbang, software ini
+              Perlu hantar invois secara maya? Jangan bimbang, perisian web ini
               tersedia dengan fungsi penghantaran melalui e-mail. Anda seorang
               yang tradisional? Baiklah. Download invois anda dalam bentuk PDF
               dan cetak!
@@ -94,11 +95,42 @@ export default function Index() {
           </div>
         </div>
       </section>
+      <section className="bg-yellow-400 border-b-2 border-gray-900 flex">
+        <div className="p-10 flex py-16 space-y-6 max-w-[50vw]">
+          <p className="text-lg font-medium">
+            "Saya bina perisian secara percuma kerana ingin memberi kembali
+            kepada komuniti. Kod sumber perisian ini boleh dimuat turun di{' '}
+            <a
+              className="underline"
+              href="https://github.com/ceghap/goinvois-nextjs"
+            >
+              Github
+            </a>{' '}
+            dan anda boleh buat sesuka hati dengannya. Mahu ubah suai mengikut
+            kesesuaian perniagaan anda? silakan. Mahu menjual semula? Maaf tidak
+            boleh. Ini kerana perisan ini dilesenkan dibawah lesen{' '}
+            <a
+              className="underline"
+              href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+            >
+              GNU GENERAL PUBLIC LICENSE
+            </a>
+            ." - Ashraf Latif
+          </p>
+        </div>
+        <div className="w-[50vw] flex justify-center items-center">
+          <img className="max-w-[20vw] rounded-full" src="/images/ceghap.jpg" />
+        </div>
+      </section>
       <footer className="dark:bg-gray-900 dark:text-gray-50">
         <div className="flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400 justify-between items-center">
           <div>
-            <span className="dark:text-gray-400">
-              © Copyright 2022. All Rights Reserved. By ceghap.
+            <span className="dark:text-gray-100">
+              © Copyright 2022. All Rights Reserved. By{' '}
+              <a className="underline" href="https://www.ceghap.com">
+                ceghap
+              </a>
+              .
             </span>
           </div>
           <div className="flex flex-col justify-center pt-6 lg:pt-0">
