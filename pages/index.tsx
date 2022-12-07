@@ -11,31 +11,39 @@ export default function Index() {
         <title>goinvois</title>
       </Head>
 
-      <section className="dark:bg-gray-900 dark:text-gray-100">
-        <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
-          <h1 className="text-4xl font-bold leading-none sm:text-5xl">
-            Penjana <span className="text-violet-400">Invois</span> Percuma
-          </h1>
-          <p className="px-8 mt-8 mb-12 text-lg">
-            Urus & simpan invois perniagaan anda dengan mudah. Kami juga
-            menyediakan fungsi eksport database anda ke dalam bentuk excel untuk
-            simpanan anda.
-          </p>
-          <div className="flex flex-wrap justify-center">
-            <Link href="/register">
-              <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-violet-400 dark:text-gray-900">
-                Daftar
+      <section className="bg-gray-100 text-gray-900 flex">
+        <div className="p-4 flex items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold leading-none sm:text-5xl">
+              Penjana <span className="text-red-500">Invois</span> Percuma
+            </h1>
+            <p className="text-lg">
+              Urus & simpan invois perniagaan anda dengan mudah. Kami juga
+              menyediakan fungsi eksport database anda ke dalam bentuk excel
+              untuk simpanan anda.
+            </p>
+            <div className="flex flex-wrap justify-start space-x-4">
+              <button className="px-8 py-3 text-lg font-medium bg-gray-900 border-gray-900 border-2 text-gray-100">
+                <Link href="/register">Daftar</Link>
               </button>
-            </Link>
 
-            <button className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">
-              ketahui lebih lanjut
-            </button>
+              <button className="px-8 py-3 text-lg border-2 border-gray-700 font-medium">
+                <Link href="/register">ketahui lebih lanjut</Link>
+              </button>
+            </div>
           </div>
         </div>
+        <div className="container bg-red-500 flex justify-center items-center h-96">
+          <img
+            src="/images/invoice-page-example.svg"
+            alt="invoice page example"
+            title="invoice page example"
+            width="80%"
+          />
+        </div>
       </section>
-      <footer className="dark:bg-gray-900 dark:text-gray-50 fixed left-0 right-0 bottom-0">
-        <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400 justify-between items-center">
+      <footer className="dark:bg-gray-900 dark:text-gray-50">
+        <div className="flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-400 justify-between items-center">
           <div>
             <span className="dark:text-gray-400">
               © Copyright 2022. All Rights Reserved. By ceghap.
@@ -47,7 +55,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 href="#"
                 title="Instagram"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-yellow-500 dark:text-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +70,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 href="#"
                 title="Pinterest"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-yellow-500 dark:text-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +85,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 href="#"
                 title="Twitter"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-yellow-500 dark:text-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +100,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 href="#"
                 title="Facebook"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-yellow-500 dark:text-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +115,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 href="#"
                 title="Gmail"
-                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900"
+                className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-yellow-500 dark:text-gray-900"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

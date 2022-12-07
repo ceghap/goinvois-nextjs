@@ -4,32 +4,47 @@ import Link from 'next/link';
 export const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <header className="p-4 dark:bg-gray-900 dark:text-gray-100 fixed left-0 right-0">
-      <div className="container flex justify-between h-16 mx-auto">
-        <Link
-          rel="noopener noreferrer"
-          href="/"
-          aria-label="Back to homepage"
-          className="flex items-center p-2"
-        >
-          <img src="/logo.png" className="w-36" alt="" />
-        </Link>
+    <header className=" bg-gray-100 text-gray-900">
+      <h1 className="text-[20vw] text-center font-medium uppercase leading-none">
+        <Link href="/">goinvois</Link>
+      </h1>
+
+      <div className="flex justify-between h-16 mx-auto  text-gray-900 border-gray-900 border-y-2">
+        <ul className="md:flex items-stretch">
+          <li className="flex">
+            <button className="flex items-center px-4 font-medium">
+              <Link href="/login">Kenapa goinvois?</Link>
+            </button>
+          </li>
+          <li className="flex">
+            <button className="flex items-center px-4 font-medium">
+              <Link href="/login">Hubungi kami</Link>
+            </button>
+          </li>
+        </ul>
         <ul className="items-stretch hidden space-x-3 md:flex">
           {session ? (
             <li className="flex">
               <button
                 onClick={() => signOut()}
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                className="flex items-center px-4 font-medium"
               >
-                Logout
+                Log keluar
               </button>
             </li>
           ) : (
-            <li className="flex">
-              <button className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">
-                <Link href="/login">Login</Link>
-              </button>
-            </li>
+            <>
+              <li className="flex">
+                <button className="flex items-center justify-center px-4 border-l-2 border-gray-900 font-medium  min-w-[150px]">
+                  <Link href="/login">Log masuk</Link>
+                </button>
+              </li>
+              <li className="flex">
+                <button className="flex items-center justify-center px-4 border-l-2 border-gray-900 bg-gray-900 text-gray-100 font-medium min-w-[150px]">
+                  <Link href="/register">Daftar</Link>
+                </button>
+              </li>
+            </>
           )}
         </ul>
         <button className="flex justify-end p-4 md:hidden">
