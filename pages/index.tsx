@@ -11,8 +11,8 @@ export default function Index() {
         <title>goinvois</title>
       </Head>
 
-      <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
-        <div className="p-10 flex items-center max-w-[50vw]">
+      <section className="bg-red-500 text-gray-900 flex border-b-2 border-gray-900">
+        <div className="p-10 flex items-center max-w-[50vw] bg-gray-100 border-r-2 border-gray-900">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold leading-none sm:text-5xl">
               Penjana <span className="text-red-500">Invois</span> Pilihan
@@ -30,7 +30,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="container bg-red-500 flex justify-center items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
+        <div className="container flex justify-center items-center h-96 max-w-[50vw]">
           <img
             src="/images/invoice-page-example.svg"
             alt="invoice page example"

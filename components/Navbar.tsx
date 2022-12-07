@@ -5,11 +5,11 @@ export const Navbar = () => {
   const { data: session } = useSession();
   return (
     <header className=" bg-gray-100 text-gray-900">
-      <h1 className="text-[20vw] text-center font-medium uppercase leading-none">
+      <h1 className="text-[10vw] text-left font-medium uppercase leading-none px-4">
         <Link href="/">goinvois</Link>
       </h1>
 
-      <div className="flex justify-between h-16 mx-auto  text-gray-900 border-gray-900 border-y-2">
+      <div className="flex justify-between h-16 mx-auto text-gray-900 border-gray-900 border-y-2">
         <ul className="md:flex items-stretch">
           <li className="flex">
             <button className="flex items-center px-4 font-medium">
