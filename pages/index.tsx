@@ -11,11 +11,12 @@ export default function Index() {
         <title>goinvois</title>
       </Head>
 
-      <section className="bg-gray-100 text-gray-900 flex">
-        <div className="p-4 flex items-center">
+      <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
+        <div className="p-4 flex items-center max-w-[50vw]">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold leading-none sm:text-5xl">
-              Penjana <span className="text-red-500">Invois</span> Percuma
+              Penjana <span className="text-red-500">Invois</span> Pilihan
+              Rakyat Malaysia
             </h1>
             <p className="text-lg">
               Urus & simpan invois perniagaan anda dengan mudah. Kami juga
@@ -26,20 +27,71 @@ export default function Index() {
               <button className="px-8 py-3 text-lg font-medium bg-gray-900 border-gray-900 border-2 text-gray-100">
                 <Link href="/register">Daftar</Link>
               </button>
-
-              <button className="px-8 py-3 text-lg border-2 border-gray-700 font-medium">
-                <Link href="/register">ketahui lebih lanjut</Link>
-              </button>
             </div>
           </div>
         </div>
-        <div className="container bg-red-500 flex justify-center items-center h-96">
+        <div className="container bg-red-500 flex justify-center items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
           <img
             src="/images/invoice-page-example.svg"
             alt="invoice page example"
             title="invoice page example"
             width="80%"
           />
+        </div>
+      </section>
+      <section className="bg-gray-100  border-b-2 border-gray-900">
+        <div className="flex flex-col items-center justify-center py-16 space-y-6 ">
+          <h2 className="text-4xl font-bold leading-none sm:text-5xl max-w-lg text-center">
+            Software percuma dari <span className="text-red-500">peniaga</span>{' '}
+            kepada <span className="text-red-500">peniaga</span>
+          </h2>
+          <button className="px-8 py-3 text-lg border-2 border-gray-700 font-medium">
+            <Link href="/register">ketahui lebih lanjut</Link>
+          </button>
+        </div>
+      </section>
+      <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
+        <div className="p-4 flex items-center max-w-[50vw]">
+          <div className="space-y-6">
+            <h4 className="text-4xl font-bold leading-none sm:text-3xl">
+              Pengkalan data di awan
+            </h4>
+            <p className="text-lg">
+              Segala data yang disimpan boleh diakses di mana-mana tempat dan
+              juga peranti.
+            </p>
+          </div>
+        </div>
+        <div className="bg-green-300 container flex justify-center items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
+          <img
+            src="/images/invoice-page-example.svg"
+            alt="invoice page example"
+            title="invoice page example"
+            width="80%"
+          />
+        </div>
+      </section>
+      <section className="bg-gray-100 text-gray-900 flex border-b-2 border-gray-900">
+        <div className="bg-purple-500 flex justify-center items-center max-w-[50vw]">
+          <img
+            src="/images/invoice-page-example.svg"
+            alt="invoice page example"
+            title="invoice page example"
+            width="80%"
+          />
+        </div>
+        <div className="container flex items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
+          <div className="space-y-6 p-4 ">
+            <h4 className="text-4xl font-bold leading-none sm:text-3xl">
+              Jana invois dan kongsi
+            </h4>
+            <p className="text-lg">
+              Perlu hantar invois secara maya? Jangan bimbang, software ini
+              tersedia dengan fungsi penghantaran melalui e-mail. Anda seorang
+              yang tradisional? Baiklah. Download invois anda dalam bentuk PDF
+              dan cetak!
+            </p>
+          </div>
         </div>
       </section>
       <footer className="dark:bg-gray-900 dark:text-gray-50">
