@@ -35,7 +35,7 @@ export default function Index() {
             src="/images/invoice-page-example.svg"
             alt="invoice page example"
             title="invoice page example"
-            width="80%"
+            width="60%"
           />
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function Index() {
             src="/images/invoice-on-cloud.svg"
             alt="invoice page example"
             title="invoice page example"
-            width="80%"
+            width="60%"
           />
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function Index() {
             src="/images/send-through-email.svg"
             alt="invoice page example"
             title="invoice page example"
-            width="80%"
+            width="60%"
           />
         </div>
         <div className="container flex items-center h-96 border-l-2 border-gray-900 max-w-[50vw]">
@@ -119,7 +119,7 @@ export default function Index() {
           </p>
         </div>
         <div className="w-[50vw] flex justify-center items-center">
-          <img className="max-w-[20vw] rounded-full" src="/images/ceghap.jpg" />
+          <img className="max-w-[10vw] rounded-full" src="/images/ceghap.jpg" />
         </div>
       </section>
       <footer className="dark:bg-gray-900 dark:text-gray-50">
